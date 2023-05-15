@@ -1,0 +1,46 @@
+<div class="container">
+
+    <div class="d-flex justify-content-center ">
+
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+            <div class="form-group">
+
+                <app-input-file inputLabel="Bandera" name="bandera" type="file" accept=".png"
+                    [control]="banderaControl"></app-input-file>
+
+                <div *ngIf="submitted && f.bandera.errors" class="text-danger">
+                    <div *ngIf="f.bandera.errors.required">La bandera es requerida.</div>
+                    <div *ngIf="f.bandera.errors.pattern">La bandera debe ser un archivo PNG.</div>
+                </div>
+            </div>
+
+            <div class="form-group mt-3">
+                <app-input-text inputLabel="Nombre" name="nombre" type="text"
+                    [control]="nombreControl"></app-input-text>
+
+                <div *ngIf="submitted && f.nombre.errors" class="text-danger">
+                    <div *ngIf="f.nombre.errors.required">El nombre es requerido.</div>
+                </div>
+            </div>
+
+            <div class="form-group mt-3">
+                <app-input-text inputLabel="Capital" name="capital" type="text"
+                    [control]="capitalControl"></app-input-text>
+
+                <div *ngIf="submitted && f.capital.errors" class="text-danger">
+                    <div *ngIf="f.capital.errors.required">La capital es requerida.</div>
+                </div>
+            </div>
+
+            <div class="form-group mt-3">
+                <app-input-text inputLabel="Población" name="poblacion" type="text"
+                    [control]="poblacionControl"></app-input-text>
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-4">Enviar</button>
+        </form>
+    </div>
+
+
+</div>

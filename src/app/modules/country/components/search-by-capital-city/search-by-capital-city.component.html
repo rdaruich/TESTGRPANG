@@ -1,0 +1,12 @@
+<div class="container">
+
+    <app-input-text inputLabel='Capital' type="text" (InputChange)="onInputChange($event)"></app-input-text>
+
+    <app-country-table 
+    inputText="Ingrese el nombre de una capital."
+    [searchResponse]="searchByCapitalCityResponse"
+    [searchInput]="searchInput"
+    [fetchingResponse]="fetchingCapitalCityResponse"
+    ></app-country-table>
+
+</div>

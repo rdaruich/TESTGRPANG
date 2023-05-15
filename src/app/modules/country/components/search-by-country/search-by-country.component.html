@@ -1,0 +1,12 @@
+<div class="container">
+
+    <app-input-text inputLabel='Country' type="text" (InputChange)="onInputChange($event)"></app-input-text>
+
+    <app-country-table 
+    inputText="Ingrese el nombre de un país."
+    [searchResponse]="searchByCountryResponse"
+    [searchInput]="searchInput"
+    [fetchingResponse]="fetchingCountryResponse"
+    ></app-country-table>
+
+</div>
