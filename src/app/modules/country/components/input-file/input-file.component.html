@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label class="form-label">{{ inputLabel }}</label>
+            <div class="input-group">
+                <input [type]="type" [id]="name" [accept]="accept" class="form-control" [formControl]="control" [(ngModel)]="fileInput">
+                <span class="input-group-text">
+                    <i class="fa-solid fa-upload"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Bandera</th>
+                <th>Nombre</th>
+                <th>Capital</th>
+                <th>Población</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngIf="searchResponse.length > 0;">
+                <tr *ngFor="let item of searchResponse">
+                    <td>{{ item.flag }}</td>
+                    <td>{{ item.name.common }}</td>
+                    <td>{{ item.capital[0] }}</td>
+                    <td>{{ item.population.toLocaleString() }}</td>                        
+                </tr>
+            </ng-container>
+
+            <ng-container *ngIf="searchInput && searchResponse.length === 0 && fetchingResponse == true">
+                <tr *ngFor="let _ of [].constructor(5)">
+                    <td>
+                        <span class="placeholder"></span>
+                    </td>
+                    <td>
+                        <span class="placeholder"></span>
+                    </td>
+                    <td>
+                        <span class="placeholder"></span>
+                    </td>
+                    <td>
+                        <span class="placeholder"></span>
+                    </td>
+                </tr>
+            </ng-container>
+
+            <ng-container *ngIf="searchInput && searchResponse.length === 0 && fetchingResponse == false">
+                <tr>
+                    <td colspan="4">No se encontraron resultados.</td>
+                </tr>
+            </ng-container>
+
+            <ng-container *ngIf="!searchInput">
+                <tr>
+                    <td colspan="4">{{inputText}}</td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+</div>
